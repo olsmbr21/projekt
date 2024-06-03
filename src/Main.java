@@ -13,6 +13,7 @@ public class Main {
 
 
             int b;
+            int c;
             // Press Strg+F5 to start debugging your code. We have set one breakpoint
             // for you, but you can always add more by pressing Strg+F8.
             System.out.println("i = " + i);
