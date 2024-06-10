@@ -1,3 +1,5 @@
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
 import java.util.Scanner;
 
 public class Main {
@@ -36,17 +38,31 @@ public class Main {
         System.out.println("Fläche: " + flaeche);
         System.out.println("Umfang: " + umfang);
         System.out.println("Ist gleichseitig: " + (gleichseitig ? "Ja" : "Nein"));
+
+        // Eingabe des Radius des Kreises
+        System.out.print("Geben Sie den Radius des Kreises ein: ");
+        double radius = scanner.nextDouble();
+
+        // Aufruf der Funktionen und Ausgabe der Ergebnisse für den Kreis
+        double circleArea = calculateCircleArea(radius);
+        double circumference = calculateCircumference(radius);
+        boolean isPositive = isPositiveRadius(radius);
+
+        System.out.println("Radius: " + radius);
+        System.out.println("Kreisfläche: " + circleArea);
+        System.out.println("Umfang: " + circumference);
+        System.out.println("Ist der Radius positiv: " + isPositive);
     }
 
-    // Funktion zur Berechnung der Fläche
-    public static double calculateArea(double width, double height) {
-        return width * height;
-    }
+        // Funktion zur Berechnung der Fläche
+        public static double calculateArea ( double width, double height){
+            return width * height;
+        }
 
-    // Funktion zur Berechnung des Umfangs
-    public static double calculatePerimeter(double width, double height) {
-        return 2 * (width + height);
-    }
+        // Funktion zur Berechnung des Umfangs
+        public static double calculatePerimeter ( double width, double height){
+            return 2 * (width + height);
+        }
 
     // Funktion zur Überprüfung, ob das Rechteck ein Quadrat ist
     public static boolean isSquare(double width, double height) {
@@ -55,3 +71,23 @@ public class Main {
 
 
 }
+        // Funktion zur Überprüfung, ob das Rechteck ein Quadrat ist
+        public static boolean isSquare ( double width, double height){
+            return width == height;
+        }
+        // Funktion zur Berechnung der Fläche des Kreises
+        public static double calculateCircleArea ( double radius){
+            return Math.PI * radius * radius;
+        }
+
+        // Funktion zur Berechnung des Umfangs des Kreises
+        public static double calculateCircumference ( double radius){
+            return 2 * Math.PI * radius;
+        }
+
+        // Funktion zur Überprüfung, ob der Radius positiv ist
+        public static boolean isPositiveRadius ( double radius){
+            return radius > 0;
+        }
+    }
+
