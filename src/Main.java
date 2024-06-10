@@ -1,5 +1,3 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 import java.util.Scanner;
 
 public class Main {
@@ -23,9 +21,9 @@ public class Main {
         System.out.println("Höhe: " + height);
         System.out.println("Fläche: " + area);
         System.out.println("Umfang: " + perimeter);
-        System.out.println("Ist Quadrat: " + isSquare);
+        System.out.println("Ist Quadrat: " + (isSquare ? "Ja" : "Nein"));
 
-        dreieck d1 = new dreieck();
+        Dreieck d1 = new Dreieck();
         double a = 5.0;
         double b = 5.0;
         double c = 5.0;
@@ -51,43 +49,57 @@ public class Main {
         System.out.println("Radius: " + radius);
         System.out.println("Kreisfläche: " + circleArea);
         System.out.println("Umfang: " + circumference);
-        System.out.println("Ist der Radius positiv: " + isPositive);
+        System.out.println("Ist der Radius positiv: " + (isPositive ? "Ja" : "Nein"));
+
+        scanner.close();
     }
 
-        // Funktion zur Berechnung der Fläche
-        public static double calculateArea ( double width, double height){
-            return width * height;
-        }
+    // Funktion zur Berechnung der Fläche des Rechtecks
+    public static double calculateArea(double width, double height) {
+        return width * height;
+    }
 
-        // Funktion zur Berechnung des Umfangs
-        public static double calculatePerimeter ( double width, double height){
-            return 2 * (width + height);
-        }
+    // Funktion zur Berechnung des Umfangs des Rechtecks
+    public static double calculatePerimeter(double width, double height) {
+        return 2 * (width + height);
+    }
 
     // Funktion zur Überprüfung, ob das Rechteck ein Quadrat ist
     public static boolean isSquare(double width, double height) {
         return width == height;
     }
 
-
-}
-        // Funktion zur Überprüfung, ob das Rechteck ein Quadrat ist
-        public static boolean isSquare ( double width, double height){
-            return width == height;
-        }
-        // Funktion zur Berechnung der Fläche des Kreises
-        public static double calculateCircleArea ( double radius){
-            return Math.PI * radius * radius;
-        }
-
-        // Funktion zur Berechnung des Umfangs des Kreises
-        public static double calculateCircumference ( double radius){
-            return 2 * Math.PI * radius;
-        }
-
-        // Funktion zur Überprüfung, ob der Radius positiv ist
-        public static boolean isPositiveRadius ( double radius){
-            return radius > 0;
-        }
+    // Funktion zur Berechnung der Fläche des Kreises
+    public static double calculateCircleArea(double radius) {
+        return Math.PI * radius * radius;
     }
 
+    // Funktion zur Berechnung des Umfangs des Kreises
+    public static double calculateCircumference(double radius) {
+        return 2 * Math.PI * radius;
+    }
+
+    // Funktion zur Überprüfung, ob der Radius positiv ist
+    public static boolean isPositiveRadius(double radius) {
+        return radius > 0;
+    }
+}
+
+class Dreieck {
+
+    // Funktion zur Berechnung der Fläche eines Dreiecks mit Herons Formel
+    public double berechneFlaeche(double a, double b, double c) {
+        double s = (a + b + c) / 2; // Halbperimeter
+        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+
+    // Funktion zur Berechnung des Umfangs eines Dreiecks
+    public double berechneUmfang(double a, double b, double c) {
+        return a + b + c;
+    }
+
+    // Funktion zur Überprüfung, ob ein Dreieck gleichseitig ist
+    public boolean istGleichseitig(double a, double b, double c) {
+        return a == b && b == c;
+    }
+}
