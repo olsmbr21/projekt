@@ -22,6 +22,20 @@ public class Main {
         System.out.println("Fläche: " + area);
         System.out.println("Umfang: " + perimeter);
         System.out.println("Ist Quadrat: " + isSquare);
+
+        dreieck d1 = new dreieck();
+        double a = 5.0;
+        double b = 5.0;
+        double c = 5.0;
+
+        double flaeche = d1.berechneFlaeche(a, b, c);
+        double umfang = d1.berechneUmfang(a, b, c);
+        boolean gleichseitig = d1.istGleichseitig(a, b, c);
+
+        System.out.println("Seitenlängen: a = " + a + ", b = " + b + ", c = " + c);
+        System.out.println("Fläche: " + flaeche);
+        System.out.println("Umfang: " + umfang);
+        System.out.println("Ist gleichseitig: " + (gleichseitig ? "Ja" : "Nein"));
     }
 
     // Funktion zur Berechnung der Fläche
@@ -38,4 +52,6 @@ public class Main {
     public static boolean isSquare(double width, double height) {
         return width == height;
     }
+
+
 }
