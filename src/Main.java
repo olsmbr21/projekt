@@ -24,20 +24,49 @@ public class Main {
         System.out.println("Fläche: " + area);
         System.out.println("Umfang: " + perimeter);
         System.out.println("Ist Quadrat: " + isSquare);
+
+        // Eingabe des Radius des Kreises
+        System.out.print("Geben Sie den Radius des Kreises ein: ");
+        double radius = scanner.nextDouble();
+
+        // Aufruf der Funktionen und Ausgabe der Ergebnisse für den Kreis
+        double circleArea = calculateCircleArea(radius);
+        double circumference = calculateCircumference(radius);
+        boolean isPositive = isPositiveRadius(radius);
+
+        System.out.println("Radius: " + radius);
+        System.out.println("Kreisfläche: " + circleArea);
+        System.out.println("Umfang: " + circumference);
+        System.out.println("Ist der Radius positiv: " + isPositive);
     }
 
-    // Funktion zur Berechnung der Fläche
-    public static double calculateArea(double width, double height) {
-        return width * height;
+        // Funktion zur Berechnung der Fläche
+        public static double calculateArea ( double width, double height){
+            return width * height;
+        }
+
+        // Funktion zur Berechnung des Umfangs
+        public static double calculatePerimeter ( double width, double height){
+            return 2 * (width + height);
+        }
+
+        // Funktion zur Überprüfung, ob das Rechteck ein Quadrat ist
+        public static boolean isSquare ( double width, double height){
+            return width == height;
+        }
+        // Funktion zur Berechnung der Fläche des Kreises
+        public static double calculateCircleArea ( double radius){
+            return Math.PI * radius * radius;
+        }
+
+        // Funktion zur Berechnung des Umfangs des Kreises
+        public static double calculateCircumference ( double radius){
+            return 2 * Math.PI * radius;
+        }
+
+        // Funktion zur Überprüfung, ob der Radius positiv ist
+        public static boolean isPositiveRadius ( double radius){
+            return radius > 0;
+        }
     }
 
-    // Funktion zur Berechnung des Umfangs
-    public static double calculatePerimeter(double width, double height) {
-        return 2 * (width + height);
-    }
-
-    // Funktion zur Überprüfung, ob das Rechteck ein Quadrat ist
-    public static boolean isSquare(double width, double height) {
-        return width == height;
-    }
-}
